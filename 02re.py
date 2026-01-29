@@ -17,7 +17,5 @@ phone=input("请输入手机号:>>>>")
 # print(check_phone(phone))
 print(check_phone_re(phone))
 
-data="0123"
-patten="[]"
-print(re.findall(patten,data))
+
 
