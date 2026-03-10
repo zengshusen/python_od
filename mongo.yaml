@@ -1,0 +1,23 @@
+version: '3'
+services:
+  my-app:
+  image: crpi-2goccqfa7fjbke7a.cn-guangzhou.personal.cr.aliyuncs.com/rose-repo/my-ubuntu:1.0
+  posts:
+    - 3000:3000
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    
